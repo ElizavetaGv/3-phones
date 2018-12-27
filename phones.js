@@ -12,12 +12,12 @@ function onReady() {
 		var phonesSortedRating=_.sortBy(phones, [getMaxRating]);
 		for (var i=0; i<phonesSorted.length; i++) {
 			var el=document.createElement('div');
-			el.innerText=phonesSorted[i].name+' '+phonesSorted[i].rating + '*';
+			el.innerText=phonesSorted[i].vendor+' '+phonesSorted[i].name+' '+phonesSorted[i].rating + '*';
 			document.getElementById('list').appendChild(el);	
 			
 		}
 		var max=document.createElement('div');
-		max.innerText=phonesSortedRating[0].name+' '+phonesSortedRating[0].rating + '*';
+		max.innerText=phonesSortedRating[0].vendor+' '+phonesSortedRating[0].name+' '+phonesSortedRating[0].rating + '*';
 		document.getElementById('max').appendChild(max);
 		document.getElementById('loader').setAttribute('style', 'display:none;');
 		
@@ -25,7 +25,7 @@ function onReady() {
 }
 		
 function getManufacturer(phones) {
-	return phones.name;
+	return phones.vendor;
 }
 
 function getMaxRating(phones) {
